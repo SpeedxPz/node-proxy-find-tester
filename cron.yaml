@@ -1,0 +1,4 @@
+cron:
+- description: "Update proxy list"
+  url: /tasks/updateproxy
+  schedule: every 10 mins
