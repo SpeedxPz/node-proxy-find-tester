@@ -9,7 +9,7 @@ The worst proxy retrieve &amp; tester you ever seen
 ## Deployment
   Just create firebase collection and deploy this to AppEngine
   
-### Environment Variables
+## Environment Variables
 
 Variable | Description 
 --- | --- 
@@ -19,13 +19,13 @@ Variable | Description
 `TEST_OPTION_PING_URL` | URL to use for latency test
 `TEST_OPTION_SPEED_URL` | URL to use for speed test
 
-### Crontab
+## Crontab
  Google AppEngine cron included and will do updateproxy every 1 hour
 If you want to change the interval just edit in cron.yaml
 
-### /proxy_plugins
+## /proxy_plugins
  You can add more site to crawl the proxy by add new files
 
-### Contribution
+## Contribution
 
 This thing bad than you expect, Feel free to improve this if you want
