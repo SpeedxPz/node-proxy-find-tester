@@ -23,6 +23,9 @@ Variable | Description
  Google AppEngine cron included and will do updateproxy every 1 hour
 If you want to change the interval just edit in cron.yaml
 
+### /proxy_plugins
+ You can add more site to crawl the proxy by add new files
+
 ### Contribution
 
 This thing bad than you expect, Feel free to improve this if you want
