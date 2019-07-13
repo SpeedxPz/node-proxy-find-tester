@@ -7,7 +7,13 @@ The worst proxy retrieve &amp; tester you ever seen
   
   
 ## Deployment
-  Just create firebase collection and deploy this to AppEngine
+  Clone this repository
+  ```
+  git clone https://github.com/SpeedxPz/node-proxy-find-tester.git node-proxy-find-tester
+  cd node-proxy-find-tester
+  gcloud app deploy app.yaml
+  gcloud app deplay cron.yaml
+  ```
   
 ## Environment Variables
 
