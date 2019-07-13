@@ -11,13 +11,11 @@ app.get('/',(req,res) => {
 });
 
 app.get('/tasks/updateproxy',(req,res) => {
-  if (req.header('X-Appengine-Cron') == true){
-    proxyTask.updateProxy();
-    res.send("OK");
+  if (req.get('X-Appengine-Cron') !== 'true') {
+         return res.sendStatus(403);
   }
-  else {
-    res.sendStatus(403);
-  }
+  proxyTask.updateProxy();
+  res.send("OK");
 });
 
 app.get('/proxylist',(req,res)  => {
@@ -27,13 +25,4 @@ app.get('/proxylist',(req,res)  => {
 });
 
 
-
-
-
 app.listen(APP_PORT, () => console.log(`Proxy service listening on ${APP_PORT}!`));
-//
-
-
-//GOOGLE_APPLICATION_CREDENTIALS="/home/takumi/Documents/Repository/testgcloud/credential/japan-proxy-badef753aa02.json"
-
-//process.on('uncaughtException',function(err){});
