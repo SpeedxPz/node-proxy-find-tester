@@ -26,7 +26,7 @@ Variable | Description
 `TEST_OPTION_SPEED_URL` | URL to use for speed test
 
 ## Crontab
- Google AppEngine cron included and will do updateproxy every 1 hour
+ Google AppEngine cron included and will do updateproxy every 30 minutes
 If you want to change the interval just edit in cron.yaml
 
 ## /proxy_plugins
