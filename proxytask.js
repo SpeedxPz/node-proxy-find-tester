@@ -21,11 +21,12 @@ function sleep(ms){
 ProxyTask.updateProxy = async function(){
   return new Promise(async (resolve,reject) => {
     try{
-      console.log('Start proxy update');
+      console.log('Starting proxy server list update...');
       let existProxyList = await ProxyTask.getExistProxyList();
-      console.log("Exist Proxy : %d", existProxyList.proxyList.length);
+      console.log("Proxy in database : %d", existProxyList.proxyList.length);
+      console.log("Get additional proxies from website...");
       let newProxyList = await loadProxyPlugins();
-      console.log("New Proxy : %d", newProxyList.proxyList.length);
+      console.log("Total new proxy : %d", newProxyList.proxyList.length);
 
       let inputProxyArray = [
         existProxyList.proxyList,
@@ -116,9 +117,11 @@ async function testProxy(proxyList){
           resultData.speed = testResult.speed;
           resultData.isSuccess = true;
           proxyResult.success++;
+          console.log(`[${proxy.ipaddress}:${proxy.port}] Success fully with latency ${resultData.latency} ms`);
           return resolve(resultData);
         } catch(err)
         {
+          console.log(`[${proxy.ipaddress}:${proxy.port}] Not reachable or it's discontinued.`);
           resultData.speed = 0;
           resultData.latency = -1;
           resultData.isSuccess = false;
@@ -145,7 +148,12 @@ async function loadProxyPlugins() {
           });
         })
       ).then(function(result){
-        let newArray = mergeProxyWithoutDuplicate(result);
+        let listarray = result.map((item) => {
+          console.log("[" + item.name + "] have " + item.list.length + " proxies.");
+          return item.list;
+        });
+        
+        let newArray = mergeProxyWithoutDuplicate(listarray);
         resolve({ proxyList : newArray});
       });
     });
