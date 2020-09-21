@@ -6,7 +6,7 @@ const path_module = require('path');
 
 const FIRESTORE_COLLECTION_NAME = process.env.COLLECTION_NAME || 'proxylist';
 const TEST_OPTION_MAX_RETRY = process.env.OPTION_MAX_RETRY || 3;
-const TEST_OPTION_MAX_TIMEOUT = process.env.OPTION_MAX_TIMEOUT || 10000;
+const TEST_OPTION_MAX_TIMEOUT = process.env.OPTION_MAX_TIMEOUT || 20000;
 const TEST_OPTION_PING_URL = process.env.OPTION_PING_URL || 'https://platform-sdk.enza.fun/sessions/ping';
 const TEST_OPTION_SPEED_URL = process.env.OPTION_SPEED_URL || 'https://shinycolors.enza.fun/assets/fonts/primula-HummingStd-E.woff2?v=d06729741a7c85dd9da625d586c12ddd';
 
