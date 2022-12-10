@@ -12,7 +12,7 @@
   "dependencies": {
     "@google-cloud/firestore": "^2.2.4",
     "async-retry": "^1.2.3",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "node-fetch": "^2.6.1",
     "request": "^2.88.0",
     "simple-proxy-agent": "^1.0.8"
